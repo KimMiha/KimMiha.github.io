@@ -4,12 +4,16 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Web Developer from Somewhere XD
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I am working as a web developer since 2017.
+
+### Like
+
+Music. Coffee( != java ). Geeks
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[dev.mihakim@gmail.com](mailto:dev.mihakim@gmail.com)
