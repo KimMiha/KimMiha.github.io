@@ -6,7 +6,7 @@
 name: miha github.io
 
 # Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
+description: Greenhorn
 
 #
 # Flags below are optional
@@ -22,12 +22,12 @@ avatar: https://avatars0.githubusercontent.com/u/44185040
 navigation:
   - name: Blog
     url: /
-  - name: About
-    url: /about
   - name: Archive
     url: /archive
   - name: Tags
     url: /tags
+  - name: About
+    url: /about
   - name: Theme
     url: https://github.com/AWEEKJ/kiko-now
 
