@@ -12,12 +12,11 @@ I am working as a web developer since 2017.
 
 ### Like
 
-Music. Coffee( != java ). Geeks
+Music. Coffee( != java ). Geeks!
 
 ### Theme 
 
-kiko-now
-url: https://github.com/AWEEKJ/kiko-now
+[kiko-now](https://github.com/AWEEKJ/kiko-now)
 
 ### Contact me
 
