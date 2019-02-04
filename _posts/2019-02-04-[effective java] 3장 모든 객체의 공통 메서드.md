@@ -1,6 +1,4 @@
----
-published: false
----
+
 object에서 final이 아닌 메서드 (equals, hashCode, toString, clone, finalize)는 모두 재정의overriding을 염두에 두고 설계되었다.
 
 일반 규약에 맞게 재정의 해야 규약을 준수한다고 가정하는 클래스들(HashMap, HashSet등)이 오작동을 하지 않는다.
