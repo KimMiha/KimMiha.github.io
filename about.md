@@ -50,6 +50,7 @@ This type of INTP has seen the world, and realized that they want no part of it,
 * 할 말 앞에서 다 함 ⭐️
   * 그러다 썅년이란 말을 듣고 자체 필터링 강화
 * 마이웨이심함 == 남의 말 잘 안들음
+  * 업무에서는 최대한 유연해지기위해 노력중입니다..
 * 자기주관 뚜렷, 호불호 확실
 * 감수성 풍부
 
