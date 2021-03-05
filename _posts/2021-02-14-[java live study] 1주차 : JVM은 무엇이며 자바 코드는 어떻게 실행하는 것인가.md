@@ -1,16 +1,16 @@
 ---
 layout: post 
-title: "백기선님과 함께하는 java live study : 1주차 - JVM은 무엇이며 자바 코드는 어떻게 실행하는 것인가" 
+title: "[java live study] 1주차 : JVM은 무엇이며 자바 코드는 어떻게 실행하는 것인가" 
 tags: [자바]
 comments: true
---------------
+---
 
 [목표](https://github.com/whiteship/live-study/issues/1)
 --------------------------------------------------------
 
 자바 소스 파일(.java)을 JVM으로 실행하는 과정 이해하기.
 
-##학습할 것 
+### 학습할 것 
 - JVM이란 무엇인가 
 - 컴파일 하는 방법 
 - 실행하는 방법 
@@ -25,6 +25,9 @@ comments: true
 #### JVM이란 무엇인가
 
 Java Vertual Machine 자바 가상 머신 이라는 뜻으로 바이트코드를 실행하는 주체.
+
+> The Java Virtual Machine is an abstract computing machine. It is the component of the technology responsible for its hardware- and operating system-independence, the small size of its compiled code, and its ability to protect users from malicious programs.  
+> 자바 가상 머신은 추상 컴퓨팅 머신입니다.  하드웨어 및 운영 체제 독립성, 컴파일 된 코드의 작은 크기 및 악성 프로그램으로부터 사용자를 보호하는 기능을 담당하는 기술의 구성 요소입니다. - [Oracle JVM 문서](https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-1.html#jvms-1.2)
 
 ( * '바이트 코드' 아니고 '바이트코드'\< )
 
@@ -77,8 +80,9 @@ where possible options include:
 
 *라이브러리나 프레임워크를 지원하는 입장에서는 꼭 이해하고 있어야 하는 부분 (이지만, 정말 안타깝게도 일부 메이븐 플러그인에서 자바9로만 컴파일을 하고 패키징을 해버리기도...)
 
-그래서..! 이런 경우 발생된 에러 메세지를 읽고 이 경우임을 알아야 한다. ![UnsupportedClassVersionError]({{ site.baseurl }}/images/study/UnsupportedClassVersionError.png)
->class file version 58.0 (자바14버전)버전으로 컴파일된 파일을 52.0버전(자바8)으로 실행해서 오류가 발생했어.
+그래서..! 이런 경우 발생된 에러 메세지를 읽고 이 경우임을 알아야 한다. 
+![UnsupportedClassVersionError]({{ site.baseurl }}/images/study/UnsupportedClassVersionError.png)
+>class file version 58.0버전(자바14버전)으로 컴파일된 파일을 52.0버전(자바8)으로 실행해서 오류가 발생했어.
 
 ```
 // 다른버전(예 14버전)으로 작성된 소스를 8버전 타겟으로 컴파일
@@ -91,7 +95,7 @@ $ javac FileName.java -source 1.8 -target 1.8
 [오라클 11버전 javac 문서](https://docs.oracle.com/en/java/javase/11/tools/javac.html#GUID-AEEC9F07-CB49-4E96-8BC7-BCC2C7F725C9)
 [오라클 11버전 javap 문서](https://docs.oracle.com/en/java/javase/11/tools/javap.html#GUID-BE20562C-912A-4F91-85CF-24909F212D7F)
 
-Q 누군가는 궁금해 할 지도 모른다. 무조건 버전을 낮추어 컴파일하면 다 되는게 아닌가?
+Q 누군가는 궁금해 할 지도 모른다. 무조건 버전을 낮추어 컴파일하면 다 되는게 아닌가?  
 A 컴파일러도 버전이 올라갈수록 성능이 좋아지기때문에 되도록 상위버전으로 컴파일을 하는것이 좋고, 하위버전으로 컴파일한 바이트코드가 과연 효율적인 코드일까? 는 아닐지도. 각 버전의 컴파일러로 컴파일한 바이트코드가 가장 최적화 되어있을 것이다. 
 
 그래서 바이트코드? 클래스 파일 안에 들어있는 것이 바이트코드 !
@@ -122,8 +126,39 @@ public class Hello {
 바이트코드인 이유가 한 줄의 OP코드가 1byte 라서 바이트코드다. 우리눈에는 지금 String 으로 보이지만 ㅎㅎ
 
 #### JIT 컴파일러란 무엇이며 어떻게 동작하는가
-JIT = Just In Time
-javac 와 전혀 관련 X 자바를 가지고 프로그램을 실행할때 관련있는 컴파일러.(jvm이 실행하는 코드)
-코드를 실행할 때 인터프리터가 line by line 으로 바이트코드를 기계어로 번역해서 실행 함.
-자주 실행하는 코드가 있다면 JIT이 번역된 기계어를 캐싱해고 재사용한다(jvm내부에 캐싱됨). 인터프리터가 매번 기계어로 번역하지 않고 바로 해석된 것을 가져다 사용하기 때문에 빠르다.(JIT 자체가 빠른것이라고 생각하면 안된다)
+JIT = Just In Time  
+javac 와 전혀 관련 X 자바를 가지고 프로그램을 실행할때 관련있는 컴파일러(jvm이 실행하는).
+코드를 실행할 때 인터프리터가 line by line 으로 바이트코드를 기계어로 번역해서 실행 함.  
+자주 실행하는 코드가 있다면 JIT이 번역된 기계어를 캐싱해고 재사용한다(jvm내부에 캐싱됨). 인터프리터가 매번 기계어로 번역하지 않고 바로 해석된 것을 가져다 사용하기 때문에 빠르다.(JIT 자체가 빠른것이라고 생각하면 안된다)  
 jvm의 런타임 영역에 들어가 있으며 JIT은 일종의 쓰레드로 동작하고 인터프리터도 같이 동작한다. 즉 동시에 진행되는 형태. 
+
+#### JVM 구성 요소
+
+[검색하니까 가장 먼저 보이는 페이지..](https://webdevtechblog.com/jvm-java-virtual-machine-architecture-94b914e93d86)
+
+[Oracle JVM Structure 문서](https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-2.html)
+~~영어를 잘해서 술술읽고 싶다..~~
+
+ 2.5. 런타임 데이터 영역  
+ 2.5.1. pc 레지스터  
+ 2.5.2. 자바 가상 머신 Stack  
+ 2.5.3. Heap  
+ 2.5.4. Class (Method) 영역  
+ 2.5.5. Run-Time Constant Pool  
+ 2.5.6. Native Method Stacks 
+ 
+문서 2.5 부분에 보면 이런것들이 보인다. 음 역시 잘 모르겠으니 그림을 찾아보자.
+ 
+
+![JVM-Architecture-diagram](https://media.geeksforgeeks.org/wp-content/uploads/20190614230114/JVM-Architecture-diagram.jpg)
+(그림 출처 : https://www.geeksforgeeks.org/how-many-types-of-memory-areas-are-allocated-by-jvm/)  
+
+
+ - JVM 의 메모리는 5 개의 다른 부분으로 나뉜다
+    - Class (Method) 영역
+    - Heap
+    - Stack
+    - PC (Program Counter) 레지스터
+    - Native Method Stack
+    
+...고 하는데 문서 2.5.5에 있는 Run-Time Constant Pool 은 어디갔지 :3
