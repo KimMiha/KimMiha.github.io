@@ -5,7 +5,7 @@ tags: [자바]
 comments: true
 ---
 
-[목표](https://github.com/whiteship/live-study/issues/1)
+[목표🔗](https://github.com/whiteship/live-study/issues/1)
 --------------------------------------------------------
 
 자바 소스 파일(.java)을 JVM으로 실행하는 과정 이해하기.
@@ -101,8 +101,8 @@ $ javac FileName.java -source 1.8 -target 1.8
 //해당 클래스파일의 호환 버전 확인 방법
 ​$ javap -verbos class명 | find /N "version"
 ```
-[오라클 11버전 javac 문서](https://docs.oracle.com/en/java/javase/11/tools/javac.html#GUID-AEEC9F07-CB49-4E96-8BC7-BCC2C7F725C9)  
-[오라클 11버전 javap 문서](https://docs.oracle.com/en/java/javase/11/tools/javap.html#GUID-BE20562C-912A-4F91-85CF-24909F212D7F)
+[오라클 11버전 javac 문서](https://docs.oracle.com/en/java/javase/11/tools/javac.html#GUID-AEEC9F07-CB49-4E96-8BC7-BCC2C7F725C9){:target="_blank"}  
+[오라클 11버전 javap 문서](https://docs.oracle.com/en/java/javase/11/tools/javap.html#GUID-BE20562C-912A-4F91-85CF-24909F212D7F){:target="_blank"}
 
 누군가는 궁금해 할 지도 모른다.  
 Q 무조건 버전을 낮추어 컴파일하면 다 되는게 아닌가?  
@@ -145,9 +145,9 @@ jvm의 런타임 영역에 들어가 있으며 JIT은 일종의 쓰레드로 동
 
 ### JVM 구성 요소
 
-[검색하니까 가장 먼저 보이는 페이지..](https://webdevtechblog.com/jvm-java-virtual-machine-architecture-94b914e93d86)
+[검색하니까 가장 먼저 보이는 페이지..](https://webdevtechblog.com/jvm-java-virtual-machine-architecture-94b914e93d86){:target="_blank"}
 
-[Oracle JVM Structure 문서](https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-2.html)
+[Oracle JVM Structure 문서](https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-2.html){:target="_blank"}
 ~~영어를 잘해서 술술읽고 싶다..~~
 
  2.5. 런타임 데이터 영역  
@@ -161,7 +161,7 @@ jvm의 런타임 영역에 들어가 있으며 JIT은 일종의 쓰레드로 동
 문서 2.5 부분에 보면 이런것들이 보인다. 음 역시 잘 모르겠으니 그림을 찾아보자.
  
 
-![JVM-Architecture-diagram](https://media.geeksforgeeks.org/wp-content/uploads/20190614230114/JVM-Architecture-diagram.jpg)
-[그림출처 : geeksforgeeks](https://www.geeksforgeeks.org/how-many-types-of-memory-areas-are-allocated-by-jvm/)  
+![JVM-Architecture-diagram](https://media.geeksforgeeks.org/wp-content/uploads/20190614230114/JVM-Architecture-diagram.jpg)  
+[그림출처 : geeksforgeeks](https://www.geeksforgeeks.org/how-many-types-of-memory-areas-are-allocated-by-jvm/){:target="_blank"}  
 
 
