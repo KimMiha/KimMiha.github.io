@@ -5,7 +5,7 @@ tags: [자바]
 comments: true
 ---
 
-[목표🔗](https://github.com/whiteship/live-study/issues/1)
+[목표](https://github.com/whiteship/live-study/issues/1)
 --------------------------------------------------------
 
 자바 소스 파일(.java)을 JVM으로 실행하는 과정 이해하기.
