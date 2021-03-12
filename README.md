@@ -1,5 +1,4 @@
-애송이의 TIL Blog.
+[세상의 모서리 구부정하게 커버린 골칫거리 outsider🤪](https://www.youtube.com/watch?v=0-q1KafFCLU){:target="_blank"}
 
-지금은 "이건 어떻게 하는거에요?" 를 묻는 사람이지만, 
 
-앞으로 점점 다른 사람으로부터 "이건 어떻게 한거에요?" 를 듣는 사람이 되도록. 
+사는게 서툰 애송이의 TIL Blog.
